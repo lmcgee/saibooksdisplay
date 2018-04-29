@@ -1,0 +1,24 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>SAI Books Home</h1>
+
+<p>Welcome to <em>SAI Books</em>, an experience in visualizing testimonies from various people as recorded in the published works listed here.</p>
+
+<h2>First Book</h2>
+<p>The site has the following first page greeting:</p>
+<ul>
+    <li><strong>Test Greeting:</strong> {{ greeting }}</li>
+    <li> The book is:
+    <div>
+    {% for book in books %}
+    <div>
+    <li>{{ book.title }} about: {{book.description}}</li>
+    </div>
+    {% endfor %}
+    </li>
+    </div>
+</ul>
+
+{% endblock %}
+

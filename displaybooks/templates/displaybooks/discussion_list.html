@@ -1,0 +1,15 @@
+{% extends "layout1.html" %}
+{% load comments %}
+{% block title %}All discussion items{% endblock %}
+
+{% block lowercontent %}
+
+<tbody>
+        {%  for discussion in discussions %}
+        <div class="w3-table">
+        <tr class="w3-table-all" <td>   {{       discussion.name }}</td><th class="w3-th">{{ discussion.subject }}</th><td> {{discussion.discussion}} </td></tr>
+        {% endfor %}
+    </div>
+
+</tbody>
+ {% endblock %}

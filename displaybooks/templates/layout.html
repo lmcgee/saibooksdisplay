@@ -1,0 +1,32 @@
+{% load static from staticfiles %}
+
+<!doctype html>
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="{% static 'css/layout.css' %}">
+        <link rel="stylesheet" href="{% static 'css/w3.css' %}'>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+        {% block static %}{% endblock %}
+    </head>
+    <body>
+        <div class="site-container">
+            <nav>
+                <nav>
+                    <a href="{% url 'displaybooks:home' %}">Home</a>
+                    <a href="{% url 'displaybooks:list' %}">Books</a>
+                    <a href="{% url 'displaybooks:image' %}">Images</a>
+                    <a>Discussions</a>
+                </nav>
+            </nav>
+            {% block content %}{% endblock %}
+            {% block lowercontent %}{% endblock lowercontent%}
+
+        </div>
+        <div>
+        </div>
+    </body>
+</html>
+
+93689CA016000105:13075728

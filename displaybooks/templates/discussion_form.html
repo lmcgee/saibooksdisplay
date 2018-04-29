@@ -1,0 +1,18 @@
+{% extends "layout1.html" %}
+{% load comments %}
+{% block title %}Discuss an idea!{% endblock %}
+
+{% block content %}
+<div class="w3-container w3-light-grey w3-padding-32 w3-padding-large" id="contact">
+    <div class="w3-content" style="max-width:800px">
+        <h4 class="w3-center"><b>Contact Me</b></h4>
+        <p>Would you like to share your personal experiences? Fill out the form and fill me in with the details :) I love meeting new people!</p>
+            <form action="" method="POST" target="_blank">
+                {{ form.as_p }}
+                {% csrf_token %}
+            <input type="submit" class="button">
+        </form>
+    </div>
+
+</div>
+{% endblock %}

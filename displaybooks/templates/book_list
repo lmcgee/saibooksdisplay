@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% load static from staticfiles %}
+{% load comments %}
+{% block static %}<link rel="stylesheet" href="{% static 'displaybooks/css/displaybooks.css' %}" %>{% endblock %}
+{% block title %}Featured Books{% endblock %}
+
+{% block content %}
+<div class="cards">
+    {% for book in displaybooks %}
+    <div class="card">
+        <header><a href="{% url 'displaybooks:detail' pk=book.pk %}">{{ book.title }}</a></header>
+        <div class="card-copy">
+            {{ book.description }}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

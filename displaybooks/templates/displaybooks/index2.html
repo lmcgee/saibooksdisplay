@@ -1,0 +1,33 @@
+{% extends "base_generic.html" %}
+{% extends "layout1.html" %}
+
+{% block content %}
+<h1>SAI Books Home</h1>
+
+<p>Welcome to <em>SAI Books</em>, an experience in visualizing testimonies from various people as recorded in the published works listed here.</p>
+
+<h2>Dynamic content</h2>
+
+<p>The site has the following second page greeting:</p>
+<ul>
+    <li><strong>Test Greeting:</strong> {{ greeting }}</li>
+</ul>
+<script type="text/javascript">
+    {% autoescape off %}
+    $(document).ready(function(){
+                      $('#container').highcharts({
+                                                 xAxis: {
+                                                 categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                                                              'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+                                                 },
+                                                 series: [{
+                                                          data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+                                                          }]
+                                                 });
+                      });
+                      {% endautoescape %}
+    </script>
+
+{% endblock %}
+
+
