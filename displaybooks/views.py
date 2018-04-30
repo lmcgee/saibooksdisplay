@@ -118,6 +118,7 @@ def index3(request):
         'index3.html',
         context={'greeting': greeting},
     )
+    
 def discussion_list(request):
     discussions = Discussion.objects.all()
     return render(request, 'displaybooks/discussion_list.html', {'discussions': discussions})
